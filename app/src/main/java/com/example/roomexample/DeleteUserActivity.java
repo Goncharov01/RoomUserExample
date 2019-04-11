@@ -8,9 +8,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class DeleteUserActivity extends AppCompatActivity {
 
-    private EditText userId;
+    private EditText userId,userName,userEmail;
     private Button btnDelete;
 
     @Override
@@ -19,9 +21,44 @@ public class DeleteUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_delete_user);
 
         userId    = findViewById(R.id.edt_Id);
+        userName  = findViewById(R.id.edtName);
+        userEmail = findViewById(R.id.edtEmail);
         btnDelete = findViewById(R.id.btnDelete);
 
     }
+
+    public void onClickSearch(View view)
+    {
+        int idSearch = Integer.parseInt(userId.getText().toString());
+
+        List<User> users = MainActivity.myDatabase.myDAO().getUsers();   // <-- ojo
+
+        for (User user : users)
+        {
+            int id = user.getId();
+            String name = user.get_name();
+            String email = user.get_email();
+
+            if (idSearch == id )
+            {
+                userName.setText(name);
+                userEmail.setText(email);
+                Toast.makeText(DeleteUserActivity.this, "User found!", Toast.LENGTH_SHORT).show();
+                break;
+
+            }
+            else
+            {
+                userName.setText("");
+                userEmail.setText("");
+                Toast.makeText(DeleteUserActivity.this, "User Id Not found!", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+
+    }
+
 
     public void onClickDelete(View view)
     {
@@ -37,11 +74,8 @@ public class DeleteUserActivity extends AppCompatActivity {
         Toast.makeText(DeleteUserActivity.this, "User Deleted Successfully", Toast.LENGTH_SHORT).show();
 
         userId.setText("");
-
-        //Navigate to NEXT Activity
-        // Intent mIntent = new Intent(MainActivity.this, AddUserActivity.class);
-        //Set value to pass on next activity
-        //startActivity(mIntent);
+        userName.setText("");
+        userEmail.setText("");
 
     }
 }

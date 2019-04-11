@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class UpdateUserActivity extends AppCompatActivity {
 
     private EditText userId, userName, userEmail;
@@ -28,6 +30,37 @@ public class UpdateUserActivity extends AppCompatActivity {
 
     }
 
+    public void onClickSearch(View view)
+    {
+        int idSearch = Integer.parseInt(userId.getText().toString());
+
+        List<User> users = MainActivity.myDatabase.myDAO().getUsers();   // <-- ojo
+
+        for (User user : users)
+        {
+            int id = user.getId();
+            String name = user.get_name();
+            String email = user.get_email();
+
+            if (idSearch == id )
+            {
+                userName.setText(name);
+                userEmail.setText(email);
+                Toast.makeText(UpdateUserActivity.this, "User found!", Toast.LENGTH_SHORT).show();
+                break;
+
+            }
+            else
+            {
+                userName.setText("");
+                userEmail.setText("");
+                Toast.makeText(UpdateUserActivity.this, "User Id Not found!", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+
+    }
 
     public void onClickUpdate(View view)
     {

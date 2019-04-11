@@ -4,37 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="188dp"
+        android:layout_height="0dp"
 
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="188dp"
-        android:layout_marginBottom="78dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
         android:text="Menu"
-        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
 
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
         android:onClick="onClickAdd"
         android:text="Add"
-        app:layout_constraintBottom_toTopOf="@+id/btnView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnView"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -42,50 +41,38 @@
         android:id="@+id/btnView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
 
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="84dp"
         android:onClick="onClickView"
         android:text="View"
-        app:layout_constraintBottom_toTopOf="@+id/btnDelete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
 
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="84dp"
         android:onClick="onClickDelete"
         android:text="Delete"
-        app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnView" />
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="174dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
         android:onClick="onClickUpdate"
         android:text="Update"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
 
 </android.support.constraint.ConstraintLayout>

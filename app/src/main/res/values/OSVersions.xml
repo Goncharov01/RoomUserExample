@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <item name="versions">Cupcake</item>
-    <item name="versions">Donut</item>
-    <item name="versions">Eclair</item>
-    <item name="versions">Foyo</item>
-    <item name="versions">GingerB</item>
-    <item name="versions">HoneyComb</item>
+
 
 </resources>

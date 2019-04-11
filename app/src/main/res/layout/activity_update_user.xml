@@ -4,41 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".UpdateUserActivity">
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="395dp"
-        android:layout_height="38dp"
+        android:layout_width="188dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="69dp"
         android:gravity="center"
-        android:text="Update User"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="24sp"
+        android:text="Update"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/edtId"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edtId"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="22dp"
+        android:layout_width="107dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Id"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/edtName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
@@ -99,4 +94,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="311dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="onClickSearch"
+        android:text="Search"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 </android.support.constraint.ConstraintLayout>

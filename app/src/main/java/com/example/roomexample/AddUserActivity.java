@@ -38,6 +38,10 @@ public class AddUserActivity extends AppCompatActivity {
 
         MainActivity.myDatabase.myDAO().addUser(user);    // <-- ojo
 
+        userId.setText("");
+        userName.setText("");
+        userEmail.setText("");
+
 
 
         Toast.makeText(AddUserActivity.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
