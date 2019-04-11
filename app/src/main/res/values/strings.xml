@@ -3,4 +3,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="android_version">
+
+        <item>Cupcake</item>
+        <item>Donut</item>
+        <item>Eclair</item>
+        <item>Foyo</item>
+        <item>GingerB</item>
+        <item>HoneyComb</item>
+
+    </string-array>
 </resources>

@@ -2,30 +2,34 @@ package com.example.roomexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AddUserActivity extends AppCompatActivity {
+public class UpdateUserActivity extends AppCompatActivity {
 
     private EditText userId, userName, userEmail;
-    private Button btnSave;
+    private Button btnUpdate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_user);
+        setContentView(R.layout.activity_update_user);
 
-        userId    = findViewById(R.id.edt_Id);
-        userName  = findViewById(R.id.edtId);
+
+        userId    = findViewById(R.id.edtId);
+        userName  = findViewById(R.id.edtName);
         userEmail = findViewById(R.id.edtEmail);
-        btnSave   = findViewById(R.id.btnAdd);
+        btnUpdate   = findViewById(R.id.btnAdd);
 
 
     }
 
-    public void onClickSave(View view)
+
+    public void onClickUpdate(View view)
     {
         int id = Integer.parseInt(userId.getText().toString());
         String name  = userName.getText().toString();
@@ -36,15 +40,15 @@ public class AddUserActivity extends AppCompatActivity {
         user.set_name(name);
         user.set_email(email);
 
-        MainActivity.myDatabase.myDAO().addUser(user);    // <-- ojo
+        MainActivity.myDatabase.myDAO().updateUser(user);    // <-- ojo
 
 
 
-        Toast.makeText(AddUserActivity.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(UpdateUserActivity.this, "User updated successfully!", Toast.LENGTH_LONG).show();
 
 
         //Navigate to NEXT Activity
-       // Intent mIntent = new Intent(MainActivity.this, AddUserActivity.class);
+        // Intent mIntent = new Intent(MainActivity.this, AddUserActivity.class);
         //Set value to pass on next activity
         //startActivity(mIntent);
 

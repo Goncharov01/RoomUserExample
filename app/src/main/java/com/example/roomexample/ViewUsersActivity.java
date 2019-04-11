@@ -17,7 +17,7 @@ public class ViewUsersActivity extends AppCompatActivity {
 
         txtInfo = findViewById(R.id.tvInfo);
 
-        List<User> users = MainActivity.myDatabase.myDAO().getUsers();
+        List<User> users = MainActivity.myDatabase.myDAO().getUsers();   // <-- ojo
 
         String info = "";
 

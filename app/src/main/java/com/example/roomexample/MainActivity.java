@@ -52,4 +52,26 @@ public class MainActivity extends AppCompatActivity {
         startActivity(mIntent);
 
     }
+
+    public void onClickDelete(View view)
+    {
+
+
+        //Navigate to NEXT Activity
+        Intent mIntent = new Intent(MainActivity.this, DeleteUserActivity.class);
+        //Set value to pass on next activity
+        startActivity(mIntent);
+
+    }
+
+    public void onClickUpdate(View view)
+    {
+
+
+        //Navigate to NEXT Activity
+        Intent mIntent = new Intent(MainActivity.this, UpdateUserActivity.class);
+        //Set value to pass on next activity
+        startActivity(mIntent);
+
+    }
 }
