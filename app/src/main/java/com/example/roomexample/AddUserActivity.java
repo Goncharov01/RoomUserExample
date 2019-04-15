@@ -42,15 +42,8 @@ public class AddUserActivity extends AppCompatActivity {
         userName.setText("");
         userEmail.setText("");
 
-
-
         Toast.makeText(AddUserActivity.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
 
-
-        //Navigate to NEXT Activity
-       // Intent mIntent = new Intent(MainActivity.this, AddUserActivity.class);
-        //Set value to pass on next activity
-        //startActivity(mIntent);
 
     }
 }
